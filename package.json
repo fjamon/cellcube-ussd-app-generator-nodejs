@@ -1,34 +1,44 @@
 {
   "name": "myriade-ussd-app-nodejs-generator",
+  "description": "myranogen' An npm Module to generate USSD apps for Myriade platform",
   "version": "1.0.0",
-  "description": "An npm Module to generate USSD apps for Myriade platform",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fjamon/myriade-ussd-app-nodejs-generator.git"
-  },
+  "author": "François Joseph Ange AMON D'ABY <ange_amon@live.fr>",
+  "contributors": [
+    
+  ],
   "keywords": [
-    "ussd",
     "myriade",
+    "ussd",
     "generator"
   ],
-  "author": "François Joseph AMON D'ABY <ange_amon@live.fr> (fj.amondaby.net)",
-  "license": "BSD-2-Clause",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/fjamon/myriade-ussd-app-nodejs-generator/blob/master/LICENSE-MIT"
-    }
-  ],  
-  "bugs": {
-    "url": "https://github.com/fjamon/myriade-ussd-app-nodejs-generator/issues"
+  "repository": "fjamon/myriade-ussd-app-nodejs-generator",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "2.7.1",
+    "mkdirp": "0.5.1",
+    "myriade-ussd-page-builder-node": "^1.0.0",
+    "sorted-object": "1.0.0"
   },
-  "homepage": "https://github.com/fjamon/myriade-ussd-app-nodejs-generator#readme",
+  "main": "bin/myranogen",
+  "preferGlobal": true,
+  "bin": {
+    "myranogen": "./bin/myranogen"
+  },
   "devDependencies": {
-    "chai": "^3.4.1",
-    "mocha": "^2.3.4"
+    "mocha": "2.2.5",
+    "rimraf": "~2.2.8",
+    "supertest": "1.0.1"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "files": [
+    "LICENSE",
+    "bin/",
+    "templates/"
+  ],
+  "scripts": {
+    "test": "mocha --reporter spec --bail --check-leaks test/",
+    "test-ci": "mocha --reporter spec --check-leaks test/"
   }
 }
