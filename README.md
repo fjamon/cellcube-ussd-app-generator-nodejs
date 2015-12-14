@@ -2,9 +2,6 @@
 
 [myranogen'](https://www.npmjs.com/package/myriade-ussd-app-nodejs-generator) USSD app generator.
 
-[![NPM Version][npm-image]][npm-url]
-[![NPM Downloads][downloads-image]][downloads-url]
-
 ## Installation
 
 ```sh
@@ -48,9 +45,3 @@ This generator can also be further configured with the following command line fl
 
 [MIT](LICENSE)
 
-[npm-image]: http://telestax.wpengine.netdna-cdn.com/wp-content/uploads/2014/03/USSD-Gateway-logo.png
-[npm-url]: https://www.npmjs.com/package/myriade-ussd-app-nodejs-generator
-
-
-//Myriade app nodejs generatpr
-//myranogen
