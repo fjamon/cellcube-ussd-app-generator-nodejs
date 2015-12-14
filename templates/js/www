@@ -5,13 +5,16 @@
 var app = require('../app');
 var debug = require('debug')('{name}:server');
 var http = require('http');
-var defaultPort = 6891;
+var defaultPort = app.defaultPort;
 
 /**
  * Get port from environment and store in Express.
  */
+/**
+ * Get port from environment and store in Express.
+ */
 
-var port = normalizePort(process.env.PORT || defaultPort);
+var port = normalizePort(process.env.PORT || '4000');
 app.set('port', port);
 
 /**
@@ -64,11 +67,11 @@ function onError(error) {
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
-      console.error(bind + ' privilège root requis');
+      console.error(bind + ' requires elevated privileges');
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      console.error(bind + ' est déjà utilisé');
+      console.error(bind + ' is already in use');
       process.exit(1);
       break;
     default:
@@ -87,5 +90,3 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
-
-module.exports = app;
